@@ -22,6 +22,7 @@ header nav {
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: 5px;
 }
 main .btn-accent {
   background-color: var(--accent-warm);
@@ -155,6 +156,7 @@ main .btn-outline-warm:hover {
 .about-section {
   background: rgba(60, 42, 33, 0.4);
   border-y: 1px solid rgba(212, 163, 115, 0.1);
+  border-radius: 10px;
 }
 
 .feature-box {
@@ -239,7 +241,7 @@ footer {
 }
 
 /* Notification Toast */
-.custom-toast {
+/* .custom-toast {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -253,7 +255,7 @@ footer {
   transform: translateY(100px);
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
+} */
 
 .custom-toast.show {
   transform: translateY(0);
