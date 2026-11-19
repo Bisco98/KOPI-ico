@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cofee ico</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="container-fluid px-0">
+      <div class="row g-0">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg navbar-dark fw-bold">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-mug-saucer"></i> Kopi ico
+              </a>
+
+              <!-- Wadah tombol Cart & Hamburger (cukup satu pasang) -->
+              <div
+                class="d-flex align-items-center order-lg-last gap-2 ms-lg-3"
+              >
+                <!-- Cart Trigger Button -->
+                <button
+                  class="btn btn-outline-light position-relative rounded-circle p-2 px-3"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#cartOffcanvas"
+                >
+                  <i class="fa-solid fa-basket-shopping text-black"></i>
+                  <span
+                    id="cartCountBadge"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style="display: none"
+                    >0</span
+                  >
+                </button>
+
+                <!-- Navbar Toggler (hanya satu) -->
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Beranda</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Services & Events
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Delivery</a></li>
+                      <li>
+                        <a class="dropdown-item" href="#">Event & Workshop</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Space Reservation</a>
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          >Catering & Corporate</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+
+                <form class="d-flex mt-2 mt-lg-0" role="search">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="container-fluid">
+      <section id="hero" class="hero-section">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start pt-5 pt-lg-0">
+              <span class="hero-badge mb-3">Artisanal Coffee & Bakery</span>
+              <h1 class="display-3 font-serif fw-bold text-white mb-3">
+                Nikmati Kehangatan Cita Rasa Kopi Otentik
+              </h1>
+              <p class="lead text-white opacity-75 mb-4 pe-lg-5">
+                Setiap cangkir diseduh penuh presisi dari biji kopi pilihan
+                terbaik nusantara. Temukan ruang nyaman untuk bersantai dan
+                berbagi cerita.
+              </p>
+              <div
+                class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3"
+              >
+                <a href="#menu" class="btn btn-accent"
+                  ><i class="fa-solid fa-mug-saucer me-2"></i>Pesan Sekarang</a
+                >
+                <a href="#about" class="btn btn-outline-warm"
+                  ><i class="fa-solid fa-circle-info me-2"></i>Cerita Kami</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="menu" class="py-5">
+        <div class="container py-4">
+          <div class="text-center section-title">
+            <span
+              class="text-uppercase tracking-wider text-muted small fw-semibold"
+              >Pilihan Terbaik</span
+            >
+            <h2 class="display-5 text-white fw-bold">Menu Favorit Kami</h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="d-flex flex-wrap justify-content-center mb-4">
+            <button class="menu-filter-btn active" data-filter="all">
+              Semua Menu
+            </button>
+            <button class="menu-filter-btn" data-filter="coffee">Coffee</button>
+            <button class="menu-filter-btn" data-filter="non-coffee">
+              Non-Coffee
+            </button>
+            <button class="menu-filter-btn" data-filter="pastry">
+              Pastry & Snack
+            </button>
+          </div>
+
+          <!-- Menu Grid -->
+          <div class="row g-4" id="menuGrid">
+            <!-- Javascript will populate cards here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- About Us Section -->
+      <section id="about" class="py-5 about-section">
+        <div class="container py-4">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <div class="position-relative">
+                <img
+                  src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=800&auto=format&fit=crop"
+                  class="img-fluid rounded-4 shadow-lg"
+                  alt="Kopi Kita Atmosphere"
+                  onerror="
+                    this.src =
+                      'https://placehold.co/800x600/3c2a21/e5d3b3?text=Kopi+Kita'
+                  "
+                />
+                <div
+                  class="position-absolute bottom-0 end-0 p-4 bg-dark bg-opacity-75 rounded-4 m-3 backdrop-blur d-none d-sm-block"
+                  style="border: 1px solid rgba(212, 163, 115, 0.3)"
+                >
+                  <h4 class="font-serif text-warning mb-0">100% Arabika</h4>
+                  <small class="text-light">Biji Kopi Lokal Pilihan</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <span
+                class="text-uppercase tracking-wider text-muted small fw-semibold"
+                >Tentang Kopi Kita</span
+              >
+              <h2 class="display-5 font-serif text-white fw-bold mb-3">
+                Menghadirkan Suasana & Kualitas Kopi Terbaik
+              </h2>
+              <p class="text-light opacity-75 mb-4">
+                Didirikan sejak tahun 2020, Kopi Kita hadir bukan sekadar
+                penyedia minuman kafein, tetapi sebagai tempat pulang bagi para
+                pecinta kehangatan rasa dan suasana yang tenang.
+              </p>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="feature-box">
+                    <div class="feature-icon">
+                      <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h5 class="text-white font-serif">Biji Kopi Segar</h5>
+                    <p class="small text-muted mb-0">
+                      Di-roasting secara presisi setiap minggu oleh roaster
+                      berpengalaman.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="feature-box">
+                    <div class="feature-icon">
+                      <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h5 class="text-white font-serif">Suasana Nyaman</h5>
+                    <p class="small text-muted mb-0">
+                      Dilengkapi Wi-Fi cepat dan tempat duduk ergonomis untuk
+                      beraktivitas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-4 col-md-6">
+            <h4 class="font-serif text-warning mb-3">
+              <i class="fa-solid fa-mug-hot me-2"></i>KOPI ico
+            </h4>
+            <p class="text-white small pe-lg-4">
+              Kedai kopi artisanal yang mengedepankan kualitas rasa,
+              keberlanjutan petani lokal, dan kenyamanan pengunjung.
+            </p>
+            <div class="d-flex mt-3">
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h5 class="font-serif text-white mb-3">Jam Operasional</h5>
+            <ul class="list-unstyled text-white small">
+              <li
+                class="mb-2 d-flex justify-content-between border-bottom border-secondary pb-1"
+              >
+                <span>Senin - Jumat</span>
+                <span class="text-white">08:00 - 22:00</span>
+              </li>
+              <li
+                class="mb-2 d-flex justify-content-between border-bottom border-secondary pb-1"
+              >
+                <span>Sabtu - Minggu</span>
+                <span class="text-white">07:00 - 23:00</span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <h5 class="font-serif text-white mb-3">Lokasi & Kontak</h5>
+            <p class="text-white small mb-2">
+              <i class="fa-solid fa-location-dot me-2 text-warning"></i>Jl Cenek
+              No.1
+            </p>
+            <p class="text-white small mb-2">
+              <i class="fa-solid fa-phone me-2 text-warning"></i>+62 823 2528
+              9961
+            </p>
+            <p class="text-white small">
+              <i class="fa-solid fa-envelope me-2 text-warning"></i
+              >halo@kopiico.id
+            </p>
+          </div>
+        </div>
+        <hr class="border-secondary opacity-25" />
+        <div class="text-center text-white small pt-2">
+          <p class="mb-0">
+            &copy; 2026 Kopi ico. All Rights Reserved. Crafted with care.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Offcanvas Keranjang Belanja -->
+    <div
+      class="offcanvas offcanvas-end text-bg-dark"
+      tabindex="-1"
+      id="cartOffcanvas"
+      aria-labelledby="cartOffcanvasLabel"
+    >
+      <div class="offcanvas-header border-bottom border-secondary">
+        <h5 class="offcanvas-title" id="cartOffcanvasLabel">
+          <i class="fa-solid fa-basket-shopping me-2"></i>Keranjang Anda
+        </h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <div id="cartItemsContainer" class="flex-grow-1 overflow-auto"></div>
+
+        <div class="border-top border-secondary pt-3 mt-3">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-bold">Total</span>
+            <span id="cartTotalPrice" class="fw-bold text-warning fs-5"
+              >Rp 0</span
+            >
+          </div>
+          <button
+            id="checkoutBtn"
+            type="button"
+            class="btn btn-light w-100 fw-bold"
+            onclick="handleCheckout()"
+            disabled
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifikasi Toast -->
+    <div
+      id="toast"
+      class="toast position-fixed bottom-0 end-0 m-3 text-bg-dark border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div id="toastMsg" class="toast-body">Item ditambahkan</div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/jquery-4.1.0.min.js"></script>
+    <script
+      src="js/bootstrap.bundle.min.js"
+      integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
