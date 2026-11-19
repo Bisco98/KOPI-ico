@@ -98,11 +98,12 @@
                   </li>
                 </ul>
 
-                <form class="d-flex mt-2 mt-lg-0" role="search">
+                <form id="searchForm" class="d-flex mt-2 mt-lg-0" role="search">
                   <input
+                    id="searchInput"
                     class="form-control me-2"
                     type="search"
-                    placeholder="Search"
+                    placeholder="Cari menu..."
                     aria-label="Search"
                   />
                   <button class="btn btn-light" type="submit">Search</button>
@@ -244,12 +245,12 @@
     <!-- Footer -->
     <footer id="contact" class="pt-5 pb-4">
       <div class="container">
-        <div class="row g-4 mb-4">
-          <div class="col-lg-4 col-md-6">
+        <div class="row g-4 mb-4 align-items-start">
+          <div class="col-lg-3 col-md-6">
             <h4 class="font-serif text-warning mb-3">
               <i class="fa-solid fa-mug-hot me-2"></i>KOPI ico
             </h4>
-            <p class="text-white small pe-lg-4">
+            <p class="text-white small pe-lg-2" style="text-align: justify">
               Kedai kopi artisanal yang mengedepankan kualitas rasa,
               keberlanjutan petani lokal, dan kenyamanan pengunjung.
             </p>
@@ -268,7 +269,8 @@
               ></a>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+
+          <div class="col-lg-3 col-md-6">
             <h5 class="font-serif text-white mb-3">Jam Operasional</h5>
             <ul class="list-unstyled text-white small">
               <li
@@ -285,7 +287,8 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-4 col-md-12">
+
+          <div class="col-lg-2 col-md-6">
             <h5 class="font-serif text-white mb-3">Lokasi & Kontak</h5>
             <p class="text-white small mb-2">
               <i class="fa-solid fa-location-dot me-2 text-warning"></i>Jl Cenek
@@ -295,12 +298,29 @@
               <i class="fa-solid fa-phone me-2 text-warning"></i>+62 823 2528
               9961
             </p>
-            <p class="text-white small">
+            <p class="text-white small mb-0">
               <i class="fa-solid fa-envelope me-2 text-warning"></i
               >halo@kopiico.id
             </p>
           </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="font-serif text-white">Peta Lokasi</h5>
+            <div
+              class="ratio ratio-4x3 rounded-3 overflow-hidden border border-secondary border-opacity-50"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.8!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNDgnMDAuMCJF!5e0!3m2!1sid!2sid!4v1700000000000"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lokasi Kopi ico"
+              ></iframe>
+            </div>
+          </div>
         </div>
+
         <hr class="border-secondary opacity-25" />
         <div class="text-center text-white small pt-2">
           <p class="mb-0">
@@ -360,6 +380,178 @@
     >
       <div class="d-flex">
         <div id="toastMsg" class="toast-body">Item ditambahkan</div>
+      </div>
+    </div>
+
+    <!-- Modal Checkout Kopi ico -->
+    <div
+      class="modal fade"
+      id="checkoutModal"
+      tabindex="-1"
+      aria-labelledby="checkoutModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content text-bg-dark border border-secondary">
+          <div class="modal-header border-secondary">
+            <h5 class="modal-title fw-bold" id="checkoutModalLabel">
+              <i class="fa-solid fa-bag-shopping me-2 text-warning"></i>Checkout
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Info Kedai & Estimasi -->
+            <div
+              class="d-flex justify-content-between align-items-center p-2 px-3 rounded-3 mb-3 bg-black bg-opacity-50 border border-secondary border-opacity-50"
+            >
+              <span class="fw-bold text-warning">
+                <i class="fa-solid fa-mug-hot me-1"></i> Kopi ico
+              </span>
+              <span class="badge bg-secondary bg-opacity-50 text-light">
+                Delivery • 20–30 min
+              </span>
+            </div>
+
+            <!-- Delivery Address -->
+            <div class="mb-4">
+              <div
+                class="d-flex justify-content-between align-items-center mb-1"
+              >
+                <label
+                  for="deliveryAddressInput"
+                  class="form-label fw-bold mb-0"
+                >
+                  Delivery Address
+                </label>
+                <button
+                  type="button"
+                  id="toggleAddressBtn"
+                  class="btn btn-link btn-sm text-warning text-decoration-none p-0"
+                  onclick="toggleAddressEdit()"
+                >
+                  Change &gt;
+                </button>
+              </div>
+              <div class="d-flex align-items-start gap-2">
+                <i class="fa-solid fa-location-dot text-danger mt-1"></i>
+                <div class="flex-grow-1">
+                  <div id="addressDisplay" class="fw-semibold text-white">
+                    Jl. Cenek No. 1, Jakarta
+                  </div>
+                  <small class="text-light opacity-75 d-block mb-1">
+                    Home • 2.3 km away
+                  </small>
+                  <input
+                    type="text"
+                    id="deliveryAddressInput"
+                    class="form-control form-control-sm bg-dark text-white border-secondary d-none"
+                    value="Jl. Cenek No. 1, Jakarta"
+                    oninput="updateAddressText(this.value)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="mb-4">
+              <h6 class="fw-bold mb-2">Order Summary</h6>
+              <div
+                id="checkoutItemsList"
+                class="d-flex flex-column gap-2"
+              ></div>
+            </div>
+
+            <!-- Rincian Biaya -->
+            <div class="border-top border-secondary pt-3 mb-4">
+              <div class="d-flex justify-content-between small mb-1">
+                <span class="text-light opacity-75">Subtotal</span>
+                <span id="checkoutSubtotal" class="text-white">Rp 0</span>
+              </div>
+              <div class="d-flex justify-content-between small mb-2">
+                <span class="text-light opacity-75">Delivery Fee</span>
+                <span id="checkoutDeliveryFee" class="text-white"
+                  >Rp 8.000</span
+                >
+              </div>
+              <div class="d-flex justify-content-between fw-bold fs-6">
+                <span>Total</span>
+                <span id="checkoutGrandTotal" class="text-warning">Rp 0</span>
+              </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div>
+              <h6 class="fw-bold mb-2">Payment Method</h6>
+              <div class="row g-2" id="paymentMethodGroup">
+                <div class="col-4">
+                  <div
+                    class="payment-option border border-warning rounded-3 p-2 h-100 bg-warning bg-opacity-10"
+                    data-payment="GoPay"
+                    style="cursor: pointer"
+                    onclick="selectPayment(this, 'GoPay')"
+                  >
+                    <div class="fw-bold small text-info mb-1">GoPay</div>
+                    <div
+                      class="text-light opacity-75"
+                      style="font-size: 0.72rem"
+                    >
+                      Balance: Rp 102.500
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div
+                    class="payment-option border border-secondary rounded-3 p-2 h-100"
+                    data-payment="OVO"
+                    style="cursor: pointer"
+                    onclick="selectPayment(this, 'OVO')"
+                  >
+                    <div class="fw-bold small text-white mb-1">OVO</div>
+                    <div
+                      class="text-light opacity-75"
+                      style="font-size: 0.72rem"
+                    >
+                      Connect to pay
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div
+                    class="payment-option border border-secondary rounded-3 p-2 h-100"
+                    data-payment="Cash"
+                    style="cursor: pointer"
+                    onclick="selectPayment(this, 'Cash')"
+                  >
+                    <div class="fw-bold small text-success mb-1">Cash</div>
+                    <div
+                      class="text-light opacity-75"
+                      style="font-size: 0.72rem"
+                    >
+                      Cash on delivery
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer border-secondary">
+            <button
+              id="payNowBtn"
+              type="button"
+              class="btn btn-danger w-100 py-2 fw-bold rounded-3"
+              onclick="confirmPayment()"
+            >
+              Pay Now • Rp 0
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/app.js"></script>
